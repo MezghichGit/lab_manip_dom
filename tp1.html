@@ -12,7 +12,7 @@
         </style>
     </head>
     <body>
-        <h2 align="center">Formation Javascript</h2>
+        <h2 id="titre" align="center">Formation <b>Javascript</b></h2>
         <p class="paraCol">Cours JAVASCRIPT NATIVE</p>
         <p class="para">Cours <a href="">Jquery</a></p>
         <a>Cours Ajax</a>
@@ -24,9 +24,13 @@
         <table id="t2">
             <tr><td>Tabelau 2</td></tr>
         </table>
-
+          <button onclick="modif()">Cliquer</button>
 
         <script>
+            function modif(){
+                var elem = document.querySelector('#titre');
+                elem.innerHTML = "<h1>JS</h1>";
+            }
 
            // var tableau = document.getElementsByTagName('tr');
            //var elem= document.getElementById("t1");
@@ -34,10 +38,11 @@
           //var tableau = document.getElementsByClassName('paraCol');
           
           //var elem = document.querySelector('p a');
-          var elem = document.querySelector('#t2');
-          alert(elem.textContent);
-          var tab = document.querySelectorAll('table,p');
-          alert(tab.length);
+          //var elem = document.querySelector('#titre');
+         // alert(elem.innerHTML);
+          //alert(elem.textContent);
+          //var tab = document.querySelectorAll('table,p');
+          //alert(tab.length);
 
              // alert(tableau.length);
            /* for(var i=0;i<tableau.length;i++)
