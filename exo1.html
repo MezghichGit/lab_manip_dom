@@ -57,7 +57,7 @@
                 </div>
 
                 <div class="col-4">
-                    <input class="btn btn-danger" type="button" value="Supprimer" onclick="deletefRow()"/>
+                    <input class="btn btn-danger" type="button" value="Supprimer" onclick="deleteRow()"/>
                 </div>
            </div>
 
@@ -65,6 +65,29 @@
 
 
         <script>
+
+            function deleteRow() {
+                var id = Number(document.getElementById("idCours").value);
+                if (!Number.isNaN(id)) {
+                    var lignes = document.getElementById("tb1").children,
+                       
+                        parent = document.getElementById("tb1")
+                    for (var i = 0; i < lignes.length; i++)
+                        if (lignes[i].children[0].textContent == id) {
+                        //    deleted = true;
+                            parent.removeChild(lignes[i]);
+                            return;
+                        }
+                        if( i == lignes.length)
+                               alert("Identifiant introuvable");
+                } else
+                    alert("Veuillez entrer un nombre valide.")
+            }
+           /* function deleteRow(){
+                var index =document.getElementById("idCours").value;
+                document.getElementById("tb1").deleteRow(index-1);
+
+            }*/
             function deleteTab(){
 
                 var parent = document.body;
