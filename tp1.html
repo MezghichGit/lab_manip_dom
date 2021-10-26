@@ -14,8 +14,8 @@
     <body>
         <h2 align="center">Formation Javascript</h2>
         <p class="paraCol">Cours JAVASCRIPT NATIVE</p>
-        <p class="para">Cours Jquery</p>
-        <p class="para">Cours Ajax</p>
+        <p class="para">Cours <a href="">Jquery</a></p>
+        <a>Cours Ajax</a>
 
         <table id="t1">
             <tr><td>Tabelau 1</td></tr>
@@ -31,12 +31,20 @@
            // var tableau = document.getElementsByTagName('tr');
            //var elem= document.getElementById("t1");
           // var tableau = elem.getElementsByTagNameNS("http://www.w3.org/1999/xhtml","tr")
-          var tableau = document.getElementsByClassName('paraCol');
-            alert(tableau.length);
-            for(var i=0;i<tableau.length;i++)
+          //var tableau = document.getElementsByClassName('paraCol');
+          
+          //var elem = document.querySelector('p a');
+          var elem = document.querySelector('#t2');
+          alert(elem.textContent);
+          var tab = document.querySelectorAll('table,p');
+          alert(tab.length);
+
+             // alert(tableau.length);
+           /* for(var i=0;i<tableau.length;i++)
             {
-                console.log(tableau[i].textContent);
-            }
+                //console.log(tableau[i].textContent);
+                document.writeln(tableau[i].textContent+"<br/>");
+            }*/
             //var tableau2 = document.get;
         </script>
     </body>
