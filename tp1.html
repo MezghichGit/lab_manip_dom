@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>DOM</title>
+        <style>
+            .paraCol{
+                color:red;
+            }
+
+            .para{
+                color:blue;
+            }
+        </style>
+    </head>
+    <body>
+        <h2 align="center">Formation Javascript</h2>
+        <p class="paraCol">Cours JAVASCRIPT NATIVE</p>
+        <p class="para">Cours Jquery</p>
+        <p class="para">Cours Ajax</p>
+
+        <table id="t1">
+            <tr><td>Tabelau 1</td></tr>
+        </table>
+
+        <table id="t2">
+            <tr><td>Tabelau 2</td></tr>
+        </table>
+
+
+        <script>
+
+           // var tableau = document.getElementsByTagName('tr');
+           //var elem= document.getElementById("t1");
+          // var tableau = elem.getElementsByTagNameNS("http://www.w3.org/1999/xhtml","tr")
+          var tableau = document.getElementsByClassName('paraCol');
+            alert(tableau.length);
+            for(var i=0;i<tableau.length;i++)
+            {
+                console.log(tableau[i].textContent);
+            }
+            //var tableau2 = document.get;
+        </script>
+    </body>
+</html>
