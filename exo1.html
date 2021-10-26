@@ -34,6 +34,8 @@
         </table>
 
         <br/><br/>
+
+        <button onclick="deleteTab()">Supprimer tab</button>
         <form>
 
            <table border="1" align="center" name="myform">
@@ -54,6 +56,12 @@
 
 
         <script>
+            function deleteTab(){
+
+                var parent = document.body;
+                var fils =  document.getElementById('t1');
+                parent.removeChild(fils);
+            }
             function addRow(){
             // étap1 : récupère les data des input
               var index =document.getElementById("idCours").value;
