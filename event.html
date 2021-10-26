@@ -23,8 +23,11 @@
             var maDiv=document.querySelector(".madiv");
             var myBtn=document.querySelector("#bt");
            
-            maDiv.onclick = salut;
-            myBtn.onclick = salut;
+            /*maDiv.onclick = salut;
+            myBtn.onclick = salut;*/
+
+            maDiv.addEventListener('click',salut);
+            maDiv.addEventListener('click',info);
 
             function salut(){
                 this.innerHTML = "<h1>Element this</h1>"; 

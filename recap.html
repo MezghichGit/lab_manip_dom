@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>DOM</title>
+        <style>
+           
+        </style>
+    </head>
+    <body>
+        <h1 id="titre" align="center">Résumé sur les évènements</h1>
+        <script>
+        //Méthode 1 :  en utilise un attribut dans la balise
+            /*function modif(){
+                var elm = document.getElementById('titre');
+                elm.innerHTML="Les events";
+            }*/
+
+        //Méthode 2 :  ajouter une propriété à votre élement  + Une fonction anonyme
+        var elm = document.getElementById('titre');
+        
+        /*elm.onclick = function(){
+            var elm = document.getElementById('titre');
+            elm.innerHTML="Les events";
+        }*/
+
+        //Méthode 3 :  ajouter une propriété à votre élement  + Une fonction nommée
+        /*elm.onclick = info;
+
+        function info(){
+            var elm = document.getElementById('titre');
+            elm.innerHTML="Les events";
+        }*/
+
+        //Méthode 4 :  utiliser la méthode addEventListner
+        var elm = document.getElementById('titre');
+        elm.addEventListener('click',info);
+        
+        function info(){
+            this.innerHTML="Les events avec addEventListner";
+        }
+
+        </script>
+
+    </body>
+
+</html>
