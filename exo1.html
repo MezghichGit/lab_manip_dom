@@ -9,26 +9,51 @@
         
 
         <table id="t1" border="1" align="center">
-            <tr><th>ID</th><th>Nom du module</th><th>Volume horaire</th></tr>
-            <tr><td>1</td><td>HTML</td><td>8</td></tr>
-            <tr><td>2</td><td>CSS</td><td>7</td></tr>
-            <tr><td>3</td><td>Javascript</td><td>16</td></tr>
-            <tr><td>4</td><td>PHP</td><td>13</td></tr>
-            <tr><td>5</td><td>Projet</td><td>3</td></tr>
+            <tr><th >ID</th><th>Nom du module</th><th>Volume horaire</th></tr>
+            <tr id="tr1"><td>1</td><td>HTML</td><td>8</td></tr>
+            <tr id="tr2"><td>2</td><td>CSS</td><td>7</td></tr>
+            <tr id="tr3"><td>3</td><td>Javascript</td><td>16</td></tr>
+            <tr id="tr4"><td>4</td><td>PHP</td><td>13</td></tr>
+            <tr id="tr5"><td>5</td><td>Projet</td><td>3</td></tr>
         </table>
 
         <br/><br/>
-        <form name="modifTr()">
+        <form>
 
-           <table border="1" align="center">
-               <tr><td>ID Module</td><td><input type="number" name="idCours"/></td></tr>
-               <tr><td>Nom Module</td><td><input type="text" name="nomCours"/></td></tr>
-               <tr><td>VH du Module</td><td><input type="numbre" name="vhCours"/></td></tr>
-               <tr><td></td><td><input type="button" value="Modifier"/></td></tr>
+           <table border="1" align="center" name="myform">
+               <tr><td>ID Module</td><td><input type="text" id="idCours"/></td></tr>
+               <tr><td>Nom Module</td><td><input type="text" id="nomCours"/></td></tr>
+               <tr><td>VH du Module</td><td><input type="text" id="vhCours"/></td></tr>
+               <tr><td></td><td><input type="button" value="Modifier" onclick="modifRow()"/></td></tr>
            </table> 
 
         </form>
         <script>
+            function modifRow(){
+
+              var index =document.getElementById("idCours").value;
+              var titre =document.getElementById("nomCours").value;
+              var vh =document.getElementById("vhCours").value;
+
+              var num = "#tr"+index+" td";
+
+
+              tableau =  document.querySelectorAll(num);
+              tableau[1].innerHTML = titre;
+              tableau[2].innerHTML = vh;
+
+
+              document.getElementById("idCours").value="";
+              document.getElementById("nomCours").value="";
+              document.getElementById("vhCours").value="";
+
+              /*var newVh=  document.myTab.myform.vhCours.value;
+
+              //var elem = document.getElementById(index);
+              tableau =  elem.querySelectorAll("# "+index+" td");
+              alert(tableau[0].textContent);
+              alert(tableau[1].textContent);*/
+            }
         </script>
     </body>
 </html>
