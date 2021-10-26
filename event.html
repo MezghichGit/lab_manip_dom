@@ -16,17 +16,20 @@
             On va découvrir les évenements en Javascript
         </div>
 
-        <button class="btn btn-primary" onclick="info()">Cliquer ici</button>
+        <button id="bt" class="btn btn-primary">Cliquer ici</button>
 
         <script>
 
             var maDiv=document.querySelector(".madiv");
+            var myBtn=document.querySelector("#bt");
            
-            maDiv.onclick = function(){  // fonction anonyme
-                //alert("Un click");
-                this.innerHTML = "<h1>Element this</h1>";
-                // const renderedText = htmlElement.innerText;
-            };
+            maDiv.onclick = salut;
+            myBtn.onclick = salut;
+
+            function salut(){
+                this.innerHTML = "<h1>Element this</h1>"; 
+            }
+
             /*function affichage(){
                 this.textContent = 'ma div';
             }*/
