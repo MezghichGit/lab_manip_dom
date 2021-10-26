@@ -21,25 +21,33 @@
 
 
         <table id="t1" border="1" align="center">
-            <tr><th >ID</th><th>Nom du module</th><th>Volume horaire</th></tr>
+            <thead><tr><th >ID</th><th>Nom du module</th><th>Volume horaire</th></tr></thead>
+            
+        <tbody id="tb1">
             <tr id="tr1"><td>1</td><td>HTML</td><td>8</td></tr>
             <tr id="tr2"><td>2</td><td>CSS</td><td>7</td></tr>
             <tr id="tr3"><td>3</td><td>Javascript</td><td>16</td></tr>
             <tr id="tr4"><td>4</td><td>PHP</td><td>13</td></tr>
             <tr id="tr5"><td>5</td><td>Projet</td><td>3</td></tr>
+        </tbody>
+
         </table>
 
         <br/><br/>
         <form>
 
            <table border="1" align="center" name="myform">
-               <tr><td>ID Module</td><td><input type="text" id="idCours"/></td></tr>
-               <tr><td>Nom Module</td><td><input type="text" id="nomCours"/></td></tr>
-               <tr><td>VH du Module</td><td><input type="text" id="vhCours"/></td></tr>
-               <tr>
-                   <td><input type="button" value="Ajouter" onclick="addRow()"/></td>
-                   <td><input type="button" value="Modifier" onclick="modifRow()"/></td>
-               </tr>
+               <thead>
+                    <tr><td>ID Module</td><td><input type="text" id="idCours"/></td></tr>
+                </thead>
+                <tbody>
+                        <tr><td>Nom Module</td><td><input type="text" id="nomCours"/></td></tr>
+                        <tr><td>VH du Module</td><td><input type="text" id="vhCours"/></td></tr>
+                        <tr>
+                            <td><input type="button" value="Ajouter" onclick="addRow()"/></td>
+                            <td><input type="button" value="Modifier" onclick="modifRow()"/></td>
+                        </tr>
+                </tbody>
            </table> 
 
         </form>
@@ -68,9 +76,17 @@
               newTr.appendChild(newTd1);
               newTr.appendChild(newTd2);
               newTr.appendChild(newTd3);
-            // étape 5 : ajour de la nouvelle tr à la fin du tableau
-              var tab1 = document.getElementById("t1");
-              tab1.appendChild( newTr);
+            // étape 5 v1 : ajour de la nouvelle tr à la fin du tableau
+               // var tab1 = document.getElementById("t1");
+               // tab1.appendChild( newTr);
+
+            // étape 5 v2 : ajour de la nouvelle tr au début du tableau
+             var tb1 = document.getElementById("tb1");
+             //var trs = tab1.querySelectorAll("tr");
+             //alert(trs[1]);
+             tb1.prepend(newTr);
+             //tab1.insertBefore(newTr,trs[1]);
+             
             // étape 6 : mettre en vert la nouvelle ligne
               newTr.className = "newTr";
             }
