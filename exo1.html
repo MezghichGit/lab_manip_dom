@@ -2,6 +2,9 @@
     <head>
         <title>DOM</title>
         <style>
+            .modif{
+                background-color: red;
+            }
         </style>
     </head>
     <body>
@@ -37,10 +40,14 @@
 
               var num = "#tr"+index+" td";
 
+              var selectedRox = "#tr"+index;
+              var myRow = document.querySelector(selectedRox);
+
 
               tableau =  document.querySelectorAll(num);
               tableau[1].innerHTML = titre;
               tableau[2].innerHTML = vh;
+              myRow.className = "modif";
 
 
               document.getElementById("idCours").value="";
