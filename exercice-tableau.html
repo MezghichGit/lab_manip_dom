@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+</head>
+<body>
+    <h1>Tableau de cours</h1>
+
+    <table id="tab" border="1">
+        <tr class="cours" id="row1">
+            <td class="id">id</td>
+            <td class="name">Nom</td>
+            <td class="vh">volume horaire</td>
+        </tr>
+        <tr class="cours" id="row2">
+            <td class="id">id</td>
+            <td class="name">Nom</td>
+            <td class="vh">volume horaire</td>
+        </tr>
+        <tr class="cours" id="row3">
+            <td class="id">id</td>
+            <td class="name">Nom</td>
+            <td class="vh">volume horaire</td>
+        </tr>
+    </table>
+
+    <script type="text/javascript">
+        var selRow = document.getElementsByClassName('cours');
+
+        for(var i = 0; i<selRow.length; i++){
+
+            selRow[i].addEventListener('click', function(){
+
+                this.style.backgroundColor = "green";
+                
+            });
+        }
+    </script>    
+</body>
+</html>
